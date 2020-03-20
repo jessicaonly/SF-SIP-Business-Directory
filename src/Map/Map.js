@@ -1,29 +1,33 @@
 import React from 'react';
 import ReactMapGL, {GeolocateControl} from 'react-map-gl';
-import { render } from 'react-dom';
 
+import Restaurants from '../data/restos.json' 
+import Pins from '../Pins/Pins';
+
+import './Map.css'
 
 class Map extends React.Component {
   state = {
     viewport: {
-      width: '100vh',
-      height: '100vh',
-      latitude: 37.8024,
-      longitude: -122.4058,
-      zoom: 12
+      width: "100vh",
+      height: "100vh",
+      latitude: 37.77,
+      longitude: -122.43,
+      zoom: 11.5
     }
   }
 
-
   render() {
-    console.log(process.env.REACT_APP_MAPBOX_KEY)
+    const { viewport } = this.state;
     return (
       <div className="map">
         <ReactMapGL
-          {...this.state.viewport}
+          {...viewport}
           onViewportChange={viewport => this.setState({ viewport })}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
+          mapStyle="mapbox://styles/jessicaonly/ck7zovsz60mfc1ims2ky8xspc"
         >
+          <Pins data={Restaurants} />
           <GeolocateControl
             positionOptions={{ enableHighAccurancy: true }}
             trackUserLocation={true}

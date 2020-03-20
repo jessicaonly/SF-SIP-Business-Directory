@@ -9,8 +9,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
   return (
-    <div className="App">
-      <Map />
+    <div className="app">
+    <h1>
+    CORONALOCKDOWN RESTAURANTS!!!
+    </h1>
+      <div className="map">
+        <Map />
+      </div>
     </div>
   );
 }

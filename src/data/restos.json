@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Brandy Ho's",
+    "cuisine": "Chinese",
+    "hours": "11:30AM - 10:00PM",
+    "services": ["delivery"],
+    "website": "https://www.brandyhos.com/",
+    "latitude": 37.797220,
+    "longitude": -122.406120
+  }
+]
