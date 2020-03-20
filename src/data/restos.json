@@ -1,11 +1,58 @@
 [
   {
+    "name": "Tony's Pizza Napoletana",
+    "cuisine": "Pizza",
+    "hours": "11:30AM - 10:00PM",
+    "services": ["pickup", "curbside"],
+    "website": "https://tonyspizzanapoletana.com/",
+    "phone_number": "415-835-9888",
+    "address": "1570 Stockton St",
+    "latitude": 37.800310,
+    "longitude": -122.409060
+  },
+  {
     "name": "Brandy Ho's",
     "cuisine": "Chinese",
     "hours": "11:30AM - 10:00PM",
     "services": ["delivery"],
     "website": "https://www.brandyhos.com/",
+    "phone_number": "(415)-788-7527",
+    "address": "217 Columbus Ave",
     "latitude": 37.797220,
     "longitude": -122.406120
+  },
+  {
+    "name": "Burger Shack",
+    "cuisine": "American",
+    "hours": "11:00AM - 8:00PM",
+    "services": ["delivery", "pickup"],
+    "website": "",
+    "phone_number": "(415)-523-6818",
+    "address": "2237 Powell St",
+    "latitude": 37.805490,
+    "longitude": -122.412120
+  },
+  {
+    "name": "Pat's Cafe",
+    "cuisine": "American",
+    "hours": "11:30AM - 10:00PM",
+    "services": ["pickup"],
+    "website": "https://patscafesf.com/",
+    "phone_number": "(415) 776-8735",
+    "address": "2330 Taylor St",
+    "latitude": 37.803790,
+    "longitude": -122.414990
+  },
+  {
+    "name": "Mama's",
+    "cuisine": "Breakfast",
+    "hours": "8AM - 3PM",
+    "services": ["pickup"],
+    "website": "http://www.mamas-sf.com/",
+    "phine_number": "(415)-362-6421",
+    "address": "1701 Stockton St",
+    "latitude": 37.801540,
+    "longitude": -122.409570
   }
+
 ]
