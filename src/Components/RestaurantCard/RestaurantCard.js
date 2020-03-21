@@ -1,11 +1,11 @@
 import React from 'react';
+import "./RestaurantCard.css";
 
 class RestaurantCard extends React.PureComponent {
   render() {
-    console.log('hi');
     const { restaurant } = this.props;
     return (
-      <section>
+      <section className="restaurant-card">
         <strong> {restaurant.name} | {''}  </strong>
         <i> {restaurant.cuisine} </i> 
         <div className="address"> <i> Address: </i> {restaurant.address} </div>

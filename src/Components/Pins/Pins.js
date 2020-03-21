@@ -3,7 +3,7 @@ import { Marker } from 'react-map-gl';
 
 import './Pins.css';
 
-import pinIcon from "../assets/map-marker.svg";
+import pinIcon from "../../assets/map-marker.svg";
 
 class Pins extends PureComponent {
   render() {

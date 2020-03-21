@@ -1,7 +1,9 @@
 body {
   margin: 0;
+  background-color: #EF7E7A;
 }
 .map {
   width: 100vw;
   height: 100vh;
+  padding-top: 5px;
 }

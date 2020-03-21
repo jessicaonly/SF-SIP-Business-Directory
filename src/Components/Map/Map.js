@@ -1,7 +1,7 @@
 import React from 'react';
 import MapGL, {GeolocateControl, Popup} from 'react-map-gl';
 
-import Restaurants from '../data/restos.json' 
+import Restaurants from '../../data/restos.json' 
 import Pins from '../Pins/Pins';
 import RestaurantCard from '../RestaurantCard/RestaurantCard';
 
@@ -17,6 +17,12 @@ class Map extends React.PureComponent {
       pitch: 0
     },
     popupInfo: null
+  }
+
+  componentDidUpdate(prevProps){
+    if (this.props.userViewport !== prevProps.userViewport){
+      this.setState({viewport: this.props.userViewport});
+    }
   }
 
   onClickMarker = resto => {
