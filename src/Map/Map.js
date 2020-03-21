@@ -10,11 +10,11 @@ import './Map.css'
 class Map extends React.PureComponent {
   state = {
     viewport: {
-      width: "100vh",
-      height: "100vh",
       latitude: 37.77,
       longitude: -122.43,
-      zoom: 13
+      zoom: 13,
+      bearing: 0,
+      pitch: 0
     },
     popupInfo: null
   }
@@ -45,9 +45,11 @@ class Map extends React.PureComponent {
   render() {
     const { viewport } = this.state;
     return (
-      <div className="map">
+      <div className="map" ref={ (mapElement) => this.mapElement = mapElement }>
         <MapGL
           {...viewport}
+          width="95%"
+          height="100%"
           onViewportChange={viewport => this.setState({ viewport })}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
           mapStyle="mapbox://styles/jessicaonly/ck7zovsz60mfc1ims2ky8xspc"

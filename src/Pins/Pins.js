@@ -7,7 +7,6 @@ import pinIcon from "../assets/map-marker.svg";
 
 class Pins extends PureComponent {
   render() {
-    const height = 20;
     const {data, onClick} = this.props;
     return (
     data.map(
