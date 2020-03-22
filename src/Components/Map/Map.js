@@ -19,11 +19,22 @@ class Map extends React.PureComponent {
     popupInfo: null
   }
 
+  businessMap = React.createRef();
+
   componentDidUpdate(prevProps){
     if (this.props.userViewport !== prevProps.userViewport){
       this.setState({viewport: this.props.userViewport});
     }
   }
+
+  handleGeocoderViewportChange = viewport => {
+    const geocoderDefaultOverrides = { transitionDuration: 1000 };
+
+    return this.handleViewportChange({
+      ...viewport,
+      ...geocoderDefaultOverrides
+    });
+  };
 
   onClickMarker = resto => {
     this.setState({popupInfo: resto});

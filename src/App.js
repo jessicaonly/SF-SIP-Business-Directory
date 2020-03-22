@@ -20,13 +20,17 @@ class App extends React.Component {
       let newViewport = {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
-          zoom: 14.5
+          zoom: 15
       }
       this.setState({
           viewport: newViewport
       });
     });
-    console.log(this.state);
+  }
+
+  onSelected = (viewport, item) => {
+    this.setState({viewport});
+    console.log('Selected: ', item)
   }
 
   render(){
@@ -35,7 +39,11 @@ class App extends React.Component {
       <h1>
       ✨ Local Businesses Open During COVID-19 ✨
       </h1>
-      <LocationField getLocation={this.getLocation} />
+      <LocationField 
+        getLocation={this.getLocation} 
+        onSelected={this.onSelected} 
+        viewport={this.state.viewport} 
+      />
         <div className="map">
           <Map userViewport={this.state.viewport} />
         </div>
