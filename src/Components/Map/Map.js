@@ -1,13 +1,14 @@
 import React from 'react';
-import MapGL, {GeolocateControl, Popup} from 'react-map-gl';
+import MapGL, { GeolocateControl, Popup, Marker } from 'react-map-gl';
 
-import Restaurants from '../../data/restos.json' 
+import Restaurants from '../../data/restos.json'
 import Pins from '../Pins/Pins';
 import RestaurantCard from '../RestaurantCard/RestaurantCard';
 
 import './Map.css'
+import userPinIcon from '../../assets/user-marker.svg';
 
-class Map extends React.PureComponent {
+class Map extends React.Component {
   state = {
     viewport: {
       latitude: 37.77,
@@ -16,14 +17,18 @@ class Map extends React.PureComponent {
       bearing: 0,
       pitch: 0
     },
-    popupInfo: null
+    popupInfo: null,
+    userLocation: []
   }
 
   businessMap = React.createRef();
 
-  componentDidUpdate(prevProps){
-    if (this.props.userViewport !== prevProps.userViewport){
-      this.setState({viewport: this.props.userViewport});
+  componentDidUpdate(prevProps) {
+    if (this.props.userViewport !== prevProps.userViewport) {
+      this.setState({ viewport: this.props.userViewport });
+    }
+    if (this.props.userLocation !== prevProps.userLocation) {
+      this.setState({ userLocation: this.props.userLocation });
     }
   }
 
@@ -37,11 +42,11 @@ class Map extends React.PureComponent {
   };
 
   onClickMarker = resto => {
-    this.setState({popupInfo: resto});
+    this.setState({ popupInfo: resto });
   }
 
   renderPopup() {
-    const {popupInfo} = this.state;
+    const { popupInfo } = this.state;
 
     return (
       popupInfo && (
@@ -51,18 +56,18 @@ class Map extends React.PureComponent {
           longitude={popupInfo.longitude}
           latitude={popupInfo.latitude}
           closeOnClick={false}
-          onClose={() => this.setState({popupInfo: null})}
+          onClose={() => this.setState({ popupInfo: null })}
         >
-         <RestaurantCard restaurant={popupInfo} />
-      </Popup>
+          <RestaurantCard restaurant={popupInfo} />
+        </Popup>
       )
     )
   }
 
   render() {
-    const { viewport } = this.state;
+    const { viewport, userLocation } = this.state;
     return (
-      <div className="map" ref={ (mapElement) => this.mapElement = mapElement }>
+      <div className="map" ref={(mapElement) => this.mapElement = mapElement}>
         <MapGL
           {...viewport}
           width="95%"
@@ -72,7 +77,20 @@ class Map extends React.PureComponent {
           mapStyle="mapbox://styles/jessicaonly/ck7zovsz60mfc1ims2ky8xspc"
         >
           <Pins data={Restaurants} onClick={this.onClickMarker} />
-            {this.renderPopup()}
+          {this.renderPopup()}
+          {userLocation.length !== 0 &&
+            <Marker
+              className="user-marker"
+              longitude={userLocation[0]}
+              latitude={userLocation[1]}
+            >
+              <img
+                src={userPinIcon}
+                height={50}
+                alt="user pin icon"
+              />
+            </Marker>
+          }
           <GeolocateControl
             positionOptions={{ enableHighAccurancy: true }}
             trackUserLocation={true}
@@ -84,3 +102,5 @@ class Map extends React.PureComponent {
 };
 
 export default Map;
+
+

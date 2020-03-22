@@ -10,7 +10,20 @@ class Pins extends PureComponent {
     const {data, onClick} = this.props;
     return (
     data.map(
-      resto => <Marker className="restaurant-pin" key={resto.name} longitude={resto.longitude} latitude={resto.latitude}> <img src={pinIcon} height="50" alt="map pin" onClick={() => onClick(resto)}/> </Marker>
+      resto => 
+        <Marker 
+          className="restaurant-pin" 
+          key={resto.name} 
+          longitude={resto.longitude} 
+          latitude={resto.latitude}
+        > 
+          <img 
+            src={pinIcon}
+            height="50" 
+            alt="map pin" 
+            onClick={() => onClick(resto)}
+          /> 
+        </Marker>
     )
   )
   }

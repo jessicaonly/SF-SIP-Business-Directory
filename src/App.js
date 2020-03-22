@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      viewport: {}
+      viewport: {},
+      userLocation: []
     }
   }
 
@@ -23,17 +24,18 @@ class App extends React.Component {
           zoom: 15
       }
       this.setState({
-          viewport: newViewport
+          viewport: newViewport,
+          userLocation: [newViewport.latitude, newViewport.longitude]
       });
     });
   }
 
   onSelected = (viewport, item) => {
-    this.setState({viewport});
-    console.log('Selected: ', item)
+    this.setState({viewport, userLocation: item.center});
   }
 
   render(){
+    const { viewport, userLocation } = this.state;
     return (
       <div className="app">
       <h1>
@@ -45,7 +47,7 @@ class App extends React.Component {
         viewport={this.state.viewport} 
       />
         <div className="map">
-          <Map userViewport={this.state.viewport} />
+          <Map userViewport={viewport} userLocation={userLocation} />
         </div>
       </div>
     );

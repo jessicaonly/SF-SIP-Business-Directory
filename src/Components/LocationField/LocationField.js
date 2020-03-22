@@ -25,7 +25,7 @@ class LocationField extends React.PureComponent {
             viewport={viewport} 
             hideOnSelect={true} 
             queryParams={queryParams} 
-            updateInputOnSelect={true}
+            updateInputOnSelect={false}
             limit={1}
           />
         </div>
