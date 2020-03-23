@@ -6,17 +6,18 @@
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: lightblue;
+    background-color: #5D61D8;
     border: none;
     font-size: 1em;
-    font-family: serif;
+    font-family: 'Muli', sans-serif;
+    color: white;
   }
   .search-results {
     width: 70%;
-    border: 1px solid darkblue;
+    border: 2px solid white;
     margin: auto;
-    background-color: lightblue;
-    color: black;
+    background-color: #5D61D8;
+    color:  white;
     cursor: pointer;
   }
 }
@@ -27,18 +28,19 @@
     width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: lightblue;
+    background-color: #5D61D8;
     border: none;
     font-size: 1em;
-    font-family: serif;
+    font-family: 'Muli', sans-serif;
+    color: white;
   }
 
   .search-results {
-    border: 1px solid darkblue;
-    width: 30%;
+    border: 2px solid white;
+    width: 50%;
     margin: auto;
-    background-color: lightblue;
-    color: black;
+    background-color: #5D61D8;
+    color: white;
     cursor: pointer;
   }
 }

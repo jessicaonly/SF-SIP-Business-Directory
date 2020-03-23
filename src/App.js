@@ -25,7 +25,7 @@ class App extends React.Component {
       }
       this.setState({
           viewport: newViewport,
-          userLocation: [newViewport.latitude, newViewport.longitude]
+          userLocation: [newViewport.longitude, newViewport.latitude]
       });
     });
   }
@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <div className="app">
       <h1>
-      ✨ Local Businesses Open During COVID-19 ✨
+      <span role="img" aria-label="sparkle-emoji">✨</span> Local Businesses Open During COVID-19  <span role="img" aria-label="sparkle-emoji">✨</span> 
       </h1>
       <LocationField 
         getLocation={this.getLocation} 

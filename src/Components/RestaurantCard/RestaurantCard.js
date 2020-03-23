@@ -6,8 +6,8 @@ class RestaurantCard extends React.PureComponent {
     const { restaurant } = this.props;
     return (
       <section className="restaurant-card">
-        <strong> {restaurant.name} | {''}  </strong>
-        <i> {restaurant.cuisine} </i> 
+        <strong> {restaurant.name} </strong>
+        <div className="cuisine"> <i> {restaurant.cuisine} </i> </div>
         <div className="address"> <i> Address: </i> {restaurant.address} </div>
         <div className="phone-number"> <i> Phone Number: </i> {restaurant.phone_number}</div>
         <div className="hours"> <i> Hours: </i> {restaurant.hours} </div>
