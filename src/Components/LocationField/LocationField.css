@@ -6,18 +6,18 @@
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: #5D61D8;
+    background-color: rgb(176, 156, 199);
     border: none;
     font-size: 1em;
     font-family: 'Muli', sans-serif;
-    color: white;
+    color: #252027;
   }
   .search-results {
     width: 70%;
     border: 2px solid white;
     margin: auto;
-    background-color: #5D61D8;
-    color:  white;
+    background-color: rgb(176, 156, 199);
+    color: #252027;
     cursor: pointer;
   }
 }
@@ -28,19 +28,19 @@
     width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: #5D61D8;
+    background-color: rgb(176, 156, 199);
     border: none;
     font-size: 1em;
     font-family: 'Muli', sans-serif;
-    color: white;
+    color: #252027;
   }
 
   .search-results {
     border: 2px solid white;
     width: 50%;
     margin: auto;
-    background-color: #5D61D8;
-    color: white;
+    background-color:rgb(176, 156, 199);
+    color: #252027;
     cursor: pointer;
   }
 }

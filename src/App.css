@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: rgb(58, 16, 112);
+  background-color: rgb(186, 173, 202);
 }
 
 a {
@@ -16,13 +16,13 @@ a:hover {
 .app {
   text-align: center;
   padding-left: 40px;
-  color: white;
+  color: rgb(19, 17, 17);
 }
 
 .button {
   background-color: white; 
   border: none;
-  color: #042178;
+  color: #360478;
   padding: 15px 32px;
   text-align: center;
   display: inline-block;
@@ -31,10 +31,12 @@ a:hover {
 
 .button:hover {
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.63);
+  border: 1px solid #360478;
 }
 
 .google-form {
   padding-bottom: 1em;
   font-size: 1.5em;
-  color: #a598a4;
+  color: #312830;
 }
