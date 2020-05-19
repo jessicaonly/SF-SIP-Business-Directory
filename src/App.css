@@ -1,9 +1,23 @@
+body {
+  margin: 0;
+  background-color: rgb(58, 16, 112);
+}
+
+a {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.726);
+}
+
 .app {
   text-align: center;
   padding-left: 40px;
   color: white;
 }
-
 
 .button {
   background-color: white; 
@@ -17,4 +31,10 @@
 
 .button:hover {
   cursor: pointer;
+}
+
+.google-form {
+  padding-bottom: 1em;
+  font-size: 1.5em;
+  color: #a598a4;
 }

@@ -8,9 +8,9 @@ import LocationField from './Components/LocationField/LocationField';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       viewport: {},
       userLocation: []
     }
@@ -19,33 +19,36 @@ class App extends React.Component {
   getLocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
       let newViewport = {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-          zoom: 17
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        zoom: 17
       }
       this.setState({
-          viewport: newViewport,
-          userLocation: [newViewport.longitude, newViewport.latitude]
+        viewport: newViewport,
+        userLocation: [newViewport.longitude, newViewport.latitude]
       });
     });
   }
 
   onSelected = (viewport, item) => {
-    this.setState({viewport, userLocation: item.center});
+    this.setState({ viewport, userLocation: item.center });
   }
 
-  render(){
+  render() {
     const { viewport, userLocation } = this.state;
     return (
       <div className="app">
-      <h1>
-      <span role="img" aria-label="sparkle-emoji">✨</span> Local Businesses Open During COVID-19  <span role="img" aria-label="sparkle-emoji">✨</span> 
-      </h1>
-      <LocationField 
-        getLocation={this.getLocation} 
-        onSelected={this.onSelected} 
-        viewport={this.state.viewport} 
-      />
+        <h1>
+          <span role="img" aria-label="sparkle-emoji">✨</span> Local Businesses Open During COVID-19  <span role="img" aria-label="sparkle-emoji">✨</span>
+        </h1>
+        <div className='google-form'>
+        If you have or know of a business to add to this database, please use <a href='https://forms.gle/4mz94Wooy9eaQnEV8'>this</a> form to let us know about it! Thank you!
+        </div>
+        <LocationField
+          getLocation={this.getLocation}
+          onSelected={this.onSelected}
+          viewport={this.state.viewport}
+        />
         <div className="map">
           <Map userViewport={viewport} userLocation={userLocation} />
         </div>
