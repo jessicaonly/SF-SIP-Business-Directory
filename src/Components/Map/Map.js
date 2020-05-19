@@ -66,6 +66,7 @@ class Map extends React.Component {
 
   render() {
     const { viewport, userLocation } = this.state;
+    const { setNearbyPlaces } = this.props;
     return (
       <div className="map" ref={(mapElement) => this.mapElement = mapElement}>
         <MapGL
@@ -76,7 +77,7 @@ class Map extends React.Component {
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
           mapStyle="mapbox://styles/jessicaonly/ck7zovsz60mfc1ims2ky8xspc"
         >
-          <Pins data={Restaurants} onClick={this.onClickMarker} />
+          <Pins data={Restaurants} onClick={this.onClickMarker} setNearbyPlaces={setNearbyPlaces} />
           {this.renderPopup()}
           {userLocation.length !== 0 &&
             <Marker

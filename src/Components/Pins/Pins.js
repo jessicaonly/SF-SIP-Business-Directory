@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import { Marker } from 'react-map-gl';
 
 import './Pins.css';
@@ -12,9 +12,9 @@ import {
 import pinIcon from "../../assets/map-marker.svg";
 
 class Pins extends PureComponent {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       pins: []
     }
   }
@@ -29,16 +29,17 @@ class Pins extends PureComponent {
     this.displayPinsOnLoad();
   }
 
-   displayPins = () => {
+  displayPins = () => {
     // query the remote DB and update the component state
     this.db
       .collection("sf-restaurants")
       .find({}, { limit: 100 })
       .asArray()
       .then(pins => {
-        this.setState({pins});
+        this.setState({ pins });
+        this.props.setNearbyPlaces(pins);
       });
-   }
+  }
 
   displayPinsOnLoad() {
     // Anonymously log in and display pins on load
@@ -50,25 +51,25 @@ class Pins extends PureComponent {
 
 
   render() {
-    const {onClick} = this.props;
+    const { onClick } = this.props;
     return (
-    this.state.pins.map(
-      resto => 
-        <Marker 
-          className="restaurant-pin" 
-          key={resto.name} 
-          longitude={resto.longitude} 
-          latitude={resto.latitude}
-        > 
-          <img 
-            src={pinIcon}
-            height="50" 
-            alt="map pin" 
-            onClick={() => onClick(resto)}
-          /> 
-        </Marker>
+      this.state.pins.map(
+        resto =>
+          <Marker
+            className="restaurant-pin"
+            key={resto.name}
+            longitude={resto.longitude}
+            latitude={resto.latitude}
+          >
+            <img
+              src={pinIcon}
+              height="50"
+              alt="map pin"
+              onClick={() => onClick(resto)}
+            />
+          </Marker>
+      )
     )
-  )
   }
 }
 

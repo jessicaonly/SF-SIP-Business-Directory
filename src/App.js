@@ -12,7 +12,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       viewport: {},
-      userLocation: []
+      userLocation: [],
+      nearbyPlaces: []
     }
   }
 
@@ -34,6 +35,10 @@ class App extends React.Component {
     this.setState({ viewport, userLocation: item.center });
   }
 
+  getNearbyPlaces = (places) => {
+    this.setState({nearbyPlaces: places})
+  }
+
   render() {
     const { viewport, userLocation } = this.state;
     return (
@@ -42,7 +47,7 @@ class App extends React.Component {
           <span role="img" aria-label="sparkle-emoji">✨</span> Local Businesses Open During COVID-19  <span role="img" aria-label="sparkle-emoji">✨</span>
         </h1>
         <div className='google-form'>
-        If you have or know of a business to add to this database, please use <a href='https://forms.gle/4mz94Wooy9eaQnEV8'>this</a> form to let us know about it! Thank you!
+          If you have or know of a business to add to this database, please use <a href='https://forms.gle/4mz94Wooy9eaQnEV8'>this</a> form to let us know about it! Thank you!
         </div>
         <LocationField
           getLocation={this.getLocation}
@@ -50,7 +55,7 @@ class App extends React.Component {
           viewport={this.state.viewport}
         />
         <div className="map">
-          <Map userViewport={viewport} userLocation={userLocation} />
+          <Map userViewport={viewport} userLocation={userLocation} setNearbyPlaces={this.getNearbyPlaces} />
         </div>
       </div>
     );

@@ -1,4 +1,12 @@
-.restaurant-card{
+.restaurant-card {
   color: navy;
   font-size: 1em;
+}
+
+.restaurant-card, a {
+  color: rgb(29, 53, 119);
+}
+
+.restaurant-card, a:hover {
+  color: rgb(66, 95, 139);
 }
