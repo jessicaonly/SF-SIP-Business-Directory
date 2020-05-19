@@ -1,4 +1,4 @@
- ##COVID Businesses Open in SF 🌉
+ ## COVID Businesses Open in SF 🌉
 
 This is a running list of businesses in SF open during 2020's shelter in place. Neighbors can use this list to find businesses near them, information about the businesses (stored in MongoDB), and, eventually, make suggesstions and changes to the map in real time.
  
