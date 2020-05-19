@@ -15,7 +15,7 @@ a:hover {
 
 .app {
   text-align: center;
-  padding-left: 40px;
+  padding-left: 20px;
   color: rgb(19, 17, 17);
 }
 
@@ -39,4 +39,15 @@ a:hover {
   padding-bottom: 1em;
   font-size: 1.5em;
   color: #312830;
+}
+
+.restaurant-data {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 600px) {
+  .restaurant-data {
+    flex-direction: column-reverse;
+  }
 }

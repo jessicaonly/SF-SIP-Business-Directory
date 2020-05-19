@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 
-import Map from './Components/Map/Map';
-import LocationField from './Components/LocationField/LocationField';
+import Map from './Components/Map';
+import LocationField from './Components/LocationField';
+import List from './Components/List';
 
 //styling for map from mapbox
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -36,11 +37,11 @@ class App extends React.Component {
   }
 
   getNearbyPlaces = (places) => {
-    this.setState({nearbyPlaces: places})
+    this.setState({ nearbyPlaces: places })
   }
 
   render() {
-    const { viewport, userLocation } = this.state;
+    const { viewport, userLocation, nearbyPlaces } = this.state;
     return (
       <div className="app">
         <h1>
@@ -52,10 +53,15 @@ class App extends React.Component {
         <LocationField
           getLocation={this.getLocation}
           onSelected={this.onSelected}
-          viewport={this.state.viewport}
+          viewport={viewport}
         />
-        <div className="map">
-          <Map userViewport={viewport} userLocation={userLocation} setNearbyPlaces={this.getNearbyPlaces} />
+        <div className='restaurant-data'>
+          <div className='restaurant-list'>
+            <List list={nearbyPlaces}/>
+          </div>
+          <div className="map">
+            <Map userViewport={viewport} userLocation={userLocation} setNearbyPlaces={this.getNearbyPlaces} />
+          </div>
         </div>
       </div>
     );

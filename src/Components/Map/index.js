@@ -2,8 +2,8 @@ import React from 'react';
 import MapGL, { GeolocateControl, Popup, Marker } from 'react-map-gl';
 
 import Restaurants from '../../data/restos.json'
-import Pins from '../Pins/Pins';
-import RestaurantCard from '../RestaurantCard/RestaurantCard';
+import Pins from '../Pins';
+import RestaurantCard from '../RestaurantCard';
 
 import './Map.css'
 import userPinIcon from '../../assets/user-marker.svg';

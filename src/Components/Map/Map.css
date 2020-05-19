@@ -1,6 +1,14 @@
 
 .map {
-  width: 100vw;
-  height: 100vh;
-  padding-top: 5px;
+  width: 70vw;
+  height: 90vh;
+  padding-top: .5em;
+} 
+
+@media only screen and (max-width: 600px) {
+  .map {
+    width: 100vw;
+    height: 100vh;
+    padding-top: .5em;
+  } 
 }
