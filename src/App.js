@@ -21,7 +21,7 @@ class App extends React.Component {
       let newViewport = {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
-          zoom: 15
+          zoom: 17
       }
       this.setState({
           viewport: newViewport,
