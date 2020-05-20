@@ -37,11 +37,20 @@ class App extends React.Component {
   }
 
   getNearbyPlaces = (places) => {
+    const cuisines = [];
     this.setState({ nearbyPlaces: places })
+    places.map(place => {
+      if (cuisines.indexOf(place.cuisine) === -1) {
+        cuisines.push(place.cuisine);
+      }
+    });
+    this.setState({cuisines});
   }
 
+
   render() {
-    const { viewport, userLocation, nearbyPlaces } = this.state;
+    console.log(this.state)
+    const { viewport, userLocation, nearbyPlaces, cuisines } = this.state;
     return (
       <div className="app">
         <h1>
@@ -54,10 +63,11 @@ class App extends React.Component {
           getLocation={this.getLocation}
           onSelected={this.onSelected}
           viewport={viewport}
+          cuisines={cuisines}
         />
         <div className='restaurant-data'>
           <div className='restaurant-list'>
-            <List list={nearbyPlaces}/>
+            <List list={nearbyPlaces} />
           </div>
           <div className="map">
             <Map userViewport={viewport} userLocation={userLocation} setNearbyPlaces={this.getNearbyPlaces} />

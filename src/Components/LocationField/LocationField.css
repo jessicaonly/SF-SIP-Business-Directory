@@ -45,3 +45,37 @@
   }
 }
 
+.button-and-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  margin: 1em;
+}
+
+.dropdown-menu {
+  background-color: white;
+  color: #252027;
+}
+
+.dropdown-toggle {
+  background-color: white;
+  border: none;
+  color: #360478;
+  padding: 15px 32px;
+}
+
+.dropdown-toggle:hover{
+  background-color: rgba(255, 255, 255, 0.63);
+  border: 1px solid #360478;
+  color: #360478;
+}
+
+@media screen and (max-width: 500px){
+  .button-and-dropdown {
+    flex-direction: column;
+  }
+}
+
